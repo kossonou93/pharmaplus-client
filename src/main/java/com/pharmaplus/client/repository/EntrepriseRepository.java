@@ -9,6 +9,6 @@ import com.pharmaplus.client.entity.Entreprise;
 
 public interface EntrepriseRepository extends MongoRepository<Entreprise, String>{
 
-	List<Entreprise> findByNomEntreprise(String nom);
+	List<Entreprise> findByNom(String nom);
 	Optional<Entreprise> findByMatricule(String matricule);
 }

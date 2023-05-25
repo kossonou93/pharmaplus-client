@@ -30,7 +30,6 @@ public class ParticulierDTO extends AuditModel{
 	private String commentaireSoldeInitial;
 	private Integer soldeCourant;
 	private Boolean quotaGeneral;
-	private String codeClt;
 	private String ncc;
 	private String adresse;
 	private String fax;
@@ -42,8 +41,8 @@ public class ParticulierDTO extends AuditModel{
 	private String situationGeo;
 	private String slogan;
 	private String webSite;
-	private String nom;
-	private String prenom;
 	private String code;
 	private Boolean enable;
+	private String nom;
+	private String prenom;
 }

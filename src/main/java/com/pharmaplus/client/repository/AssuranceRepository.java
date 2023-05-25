@@ -6,7 +6,7 @@ import com.pharmaplus.client.entity.Assurance;
 
 public interface AssuranceRepository extends MongoRepository<Assurance, String>{
 
-	Optional<Assurance> findByNomAssurance(String nom);
+	Optional<Assurance> findByNom(String nom);
 	Optional<Assurance> findByCode(String code);
 	Optional<Assurance> findByNcc(String code);
 	

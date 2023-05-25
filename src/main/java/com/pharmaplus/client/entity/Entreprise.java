@@ -2,6 +2,7 @@ package com.pharmaplus.client.entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,8 +17,9 @@ import lombok.NoArgsConstructor;
 public class Entreprise extends Client{
 
 	private String ncc;
-	private String nomEntreprise;
+	private String matricule;
 	@OneToOne(optional = true, mappedBy = "entreprise")
 	private Assurance idAssurance;
-	private String matricule;
+	@Column(columnDefinition = "string default Entreprise")
+	private String categorie = "Entreprise";
 }

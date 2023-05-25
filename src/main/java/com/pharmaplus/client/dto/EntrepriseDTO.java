@@ -31,7 +31,7 @@ public class EntrepriseDTO extends AuditModel{
 	private String commentaireSoldeInitial;
 	private Integer soldeCourant;
 	private Boolean quotaGeneral;
-	private String codeClt;
+	private String code;
 	private String ncc;
 	private String adresse;
 	private String fax;
@@ -43,8 +43,9 @@ public class EntrepriseDTO extends AuditModel{
 	private String situationGeo;
 	private String slogan;
 	private String webSite;
-	private String nomEntreprise;
 	private Assurance idAssurance;
 	private String matricule;
 	private Boolean enable;
+	private String nom;
+	private String prenom;
 }

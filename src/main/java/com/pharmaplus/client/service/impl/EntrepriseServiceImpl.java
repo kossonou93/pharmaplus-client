@@ -54,7 +54,7 @@ public class EntrepriseServiceImpl implements EntrepriseService{
 
 	@Override
 	public List<EntrepriseDTO> getEntrepriseByNom(String nom) {
-		return entrepriseRepository.findByNomEntreprise(nom)
+		return entrepriseRepository.findByNom(nom)
 				.stream()
 				.map(this::convertEntityToDto)
 				.collect(Collectors.toList());

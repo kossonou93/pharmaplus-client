@@ -24,8 +24,9 @@ public class Client extends AuditModel{
 	
 	@Id
 	private String id;
+	private String nom;
+	private String prenom;
 	private Integer taux;
-	private String categorie;
 	private Integer quota;
 	private Boolean suspendre;
 	private String telephone;
@@ -41,7 +42,7 @@ public class Client extends AuditModel{
 	private String adresse;
 	private String fax;
 	private Integer caution;
-	private String mobil;
+	private String mobile;
 	private Boolean assurance;
 	private String mutuelle;
 	private Boolean cmu;

@@ -42,7 +42,8 @@ public class AssuranceDTO extends AuditModel{
 	private String situationGeo;
 	private String slogan;
 	private String webSite;
-	private String nomAssurance;
+	private String nom;
+	private String prenom;
 	private String nomRepresentant;
 	private Boolean enable;
 }

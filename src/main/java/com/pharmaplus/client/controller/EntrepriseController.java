@@ -4,6 +4,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.pharmaplus.client.repository.EntrepriseRepository;
 import com.pharmaplus.client.service.EntrepriseService;
 import com.pharmaplus.client.utility.ApiResponse;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/entreprise")
 public class EntrepriseController {
@@ -58,7 +60,7 @@ public class EntrepriseController {
 	public ApiResponse<Void> deleteEntrepriseDTO(@PathVariable String id){
 		Entreprise entreprise = entrepriseRepository.findById(id).get();
 		entrepriseService.deleteEntrepriseById(id);
-		logger.info("Entreprise deleted successfully " + entreprise.getNomEntreprise());
+		logger.info("Entreprise deleted successfully " + entreprise.getNom());
 		return new ApiResponse<>(true, "Entreprise deleted successfully .", null);
 	}
 	

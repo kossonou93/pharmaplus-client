@@ -50,7 +50,7 @@ public class AssuranceServiceImpl implements AssuranceService{
 
 	@Override
 	public Optional<AssuranceDTO> getAssuranceByName(String nom) {
-		return assuranceRepository.findByNomAssurance(nom)
+		return assuranceRepository.findByNom(nom)
 				.stream()
 				.map(this::convertEntityToDto)
 				.collect(Collectors.toList())

@@ -4,6 +4,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import com.pharmaplus.client.utility.ApiResponse;
 
 @RestController
 @RequestMapping(value = "/particulier")
+@CrossOrigin
 public class ParticulierController {
 	
 	@Autowired
@@ -51,6 +53,7 @@ public class ParticulierController {
 		Particulier particulier = particulierRepository.findById(id).get();
 		ParticulierDTO particulierDTO = particulierService.convertEntityToDto(particulier);
 		particulierDTO.setEnable(true);
+		//particulierService.softDeleteParticulier(particulierDTO);
 		return new ApiResponse<>(true, "Particulier is soft deleted successfully ", particulierService.softDeleteParticulier(particulierDTO));
 	}
 	
@@ -64,20 +67,20 @@ public class ParticulierController {
 	
 	@GetMapping("/code/{code}")
 	public ApiResponse<ParticulierDTO> getParticulierByCode(@PathVariable String code){
-		ParticulierDTO particulier = particulierService.getParticulierByCode(code);
-		return new ApiResponse<>(true, "Particulier found successfully.", particulier);
+		ParticulierDTO particulierDTO = particulierService.getParticulierByCode(code);
+		return new ApiResponse<>(true, "Particulier found successfully.", particulierDTO);
 	}
 	
 	@GetMapping("/id/{id}")
 	public ApiResponse<ParticulierDTO> getParticulierById(@PathVariable String id){
-		ParticulierDTO particulier = particulierService.getParticulierById(id);
-		return new ApiResponse<>(true, "Particulier found successfully.", particulier);
+		ParticulierDTO particulierDTO = particulierService.getParticulierById(id);
+		return new ApiResponse<>(true, "Particulier found successfully.", particulierDTO);
 	}
 	
 	@GetMapping("/nom/{nom}")
 	public ApiResponse<List<ParticulierDTO>> getParticulierByNom(@PathVariable String nom, String prenom){
-		List<ParticulierDTO> particulier = particulierService.getParticulierByNomAndPrenom(nom, prenom);
-		return new ApiResponse<>(true, "Particulier found successfully.", particulier);
+		List<ParticulierDTO> particulierDTO = particulierService.getParticulierByNomAndPrenom(nom, prenom);
+		return new ApiResponse<>(true, "Particulier found successfully.", particulierDTO);
 	}
 	
 }

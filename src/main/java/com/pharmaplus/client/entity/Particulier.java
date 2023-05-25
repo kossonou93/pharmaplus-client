@@ -2,6 +2,7 @@ package com.pharmaplus.client.entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Document("particulier")
 public class Particulier extends Client{
 
-	private String nom;
-	private String prenom;
 	private String code;
+	@Column(columnDefinition = "string default Particulier")
+	private String categorie = "Particulier";
 }
